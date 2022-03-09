@@ -4,7 +4,6 @@ import './index.css'
 
 function App() {
 
-  // state
   const [weight, setWeight] = useState(0)
   const [height, setHeight] = useState(0)
   const [bmi, setBmi] = useState('')
@@ -13,7 +12,6 @@ function App() {
 
 
   let calcBmi = (event) => {
-    //prevent submitting
     event.preventDefault()
 
     if (weight === 0 || height === 0) {
@@ -22,7 +20,6 @@ function App() {
       let bmi = (weight / (height * height) * 703)
       setBmi(bmi.toFixed(1))
 
-      // Logic for message
 
       if (bmi < 25) {
         setMessage('You are underweight')
@@ -34,7 +31,6 @@ function App() {
     }
   }
 
-  //  show image based on bmi calculation
   let imgSrc;
 
   if (bmi < 1) {
